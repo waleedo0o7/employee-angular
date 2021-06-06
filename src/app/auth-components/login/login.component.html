@@ -1,0 +1,19 @@
+<div class="form-header">
+    <h3> تسجيل الدخول </h3>
+    <p> يمكنك معرفة و تصفح جميع مميزات شركة ميجا تراست بصفتك شريك نجاح بها , فأهلا و مرجبا بك ! </p>
+</div>
+
+<form id="login-form">
+    <div class="form-group">
+      <label for="exampleInputUsername"> اسم المستخدم </label>
+      <input #username  ngModel  autocomplete="off" type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1"> كلمة المرور </label>
+      <input #password ngModel autocomplete="off" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    <a (click)="login(username.value , password.value)" class="btn btn-primary w-100 "> دخول </a>
+
+</form>

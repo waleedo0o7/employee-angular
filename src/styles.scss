@@ -1,1 +1,176 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+// main vars
+
+$main-color : #0D2A40;
+$main-boxShadow : 0 0 13px #d2d2d2a8;
+$second-color : #ad7733;
+
+/* start main css */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.ltr{
+    direction: ltr;
+    text-align: left;
+}
+
+.rtl{
+    direction: rtl;
+    text-align: right;
+}
+
+ 
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
+
+section {
+    padding: 40px 0;
+}
+
+pre.bg-gray {
+    background: #000000;
+    color: #fff;
+}
+.bold {
+    font-weight: bold;
+}
+
+
+button:focus {
+    outline: none;
+}
+
+.color-white{
+    color: #fff;
+}
+
+
+
+
+input.form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #b3b3b3;
+    padding: 10px 20px;
+}
+
+input.form-control::placeholder{
+    color: #c3c3c3;
+
+}
+input.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #495057;
+    outline: 0;
+    box-shadow: unset;
+    box-shadow: $main-boxShadow;
+}
+
+.card {
+    padding: 10px;
+    border-radius: 0;
+    border: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $main-color;
+    border-color: $main-color;
+    border-radius: unset;
+}
+
+.btn-primary.focus, .btn-primary:focus , .btn-primary:hover {
+    color: #fff;
+    background-color: $second-color !important;
+    border-color: $second-color !important;
+    box-shadow: $main-boxShadow !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    cursor: pointer;
+}
+
+
+pre{
+    direction: ltr;
+    text-align: left;
+}
+
+
+
+
+.form-group.hidden {
+    width: 0;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+.custom-day {
+    text-align: center;
+    padding: 0.185rem 0.25rem;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+}
+.custom-day.focused {
+    background-color: #e6e6e6;
+}
+.custom-day.range, .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color: white;
+}
+.custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+}
+
+.card.leave-form-card {
+    width: 600px;
+    margin: auto;
+}
+
+
+.form-inline .form-group{
+    width: calc(50% - 4px);
+}
+.form-inline .form-group:nth-child(1) {
+    width: 0;
+}
+
+.form-inline .input-group, .form-inline .custom-select {
+    width: 100%;
+}
+
+
+//  main layout css
+
+.main-layout {
+    min-height: 100vh;
+    background: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .logo img {
+        width: 220px;
+    }
+    .form-container {
+        padding: 25px;
+        width: 500px;
+        max-width: 100%;
+    }
+}

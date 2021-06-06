@@ -1,0 +1,19 @@
+<p>leave-list works!</p>
+
+
+<ul>
+    <li *ngFor="let item of allLeaves.body.data | paginate: { itemsPerPage: itemsPerPage, currentPage: p , totalItems: totalItemsCount}">
+        {{item.name}}
+    </li>
+</ul>
+
+
+
+<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+<pagination-controls (pageChange)="getAllLeaves(itemsPerPage, p = $event);test($event)"></pagination-controls>
+
+
+
+<pre>
+    {{allLeaves.body.data | json}}
+</pre>
