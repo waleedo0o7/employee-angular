@@ -1,18 +1,19 @@
-<p>leave-list works!</p>
-
-
-<ul>
-    <li *ngFor="let item of allLeaves.body.data | paginate: { itemsPerPage: itemsPerPage, currentPage: p , totalItems: totalItemsCount}">
-        {{item.name}}
-    </li>
-</ul>
-
-
+<div class="container" style="width : 700px">
+    <div class="card mb-2" *ngFor="let item of allLeaves.body.data | paginate: { itemsPerPage: itemsPerPageValue, currentPage: p , totalItems: totalItemsCount}">
+        <p> {{item.leaveType_name}} </p>
+        <p> سبب الاجازة   :  {{item.name}}</p>
+        <p> من  :   <span> {{item.date_from}} </span>   الي  :  <span> {{item.date_to}} </span></p>
+        <p *ngIf="item.state == 'To Approve' "> الحالة  :  في انتظار الموافقة </p>
+        <p *ngIf="item.state == 'Approved' "> الحالة  :  تم الموافقة  </p>
+        <p *ngIf="item.state == 'Draft' "> الحالة  :  في المسودة  </p>
+        <p *ngIf="item.state == 'Refused' "> الحالة  :   تم الرفض    </p>
+    </div>
+</div><!-- container -->
 
 <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-<pagination-controls (pageChange)="getAllLeaves(itemsPerPage, p = $event);test($event)"></pagination-controls>
-
-
+<div class="text-center mt-5">
+    <pagination-controls (pageChange)="getAllLeaves(itemsPerPageValue, p = $event);"></pagination-controls>
+</div>
 
 <pre>
     {{allLeaves.body.data | json}}

@@ -14,10 +14,9 @@ export class LeaveListComponent implements OnInit {
 
     
   p: number = 1;
-  itemsPerPage = 2;
-  totalItems: any[] = [1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3];
-  totalPages:any ;
-  totalItemsCount = this.totalItems.length
+  itemsPerPageValue = 4;
+  totalPagesValue:any ;
+  totalItemsCount:any;
 
 
   test( e:any ) {
@@ -39,10 +38,10 @@ export class LeaveListComponent implements OnInit {
 
     return this.http.post( url , body , {headers : headers}).subscribe( data => { 
       this.allLeaves = data;
+      this.totalItemsCount = this.allLeaves.body.totalCount;
       console.log(this.allLeaves);      
     } , error => {
       console.log(error.error);
-      
     })
   }
 
